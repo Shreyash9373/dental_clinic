@@ -1,9 +1,12 @@
 import React from 'react'
+import OurServices from './components/Ourservices.jsx'
+import Appointments from './components/Appointments.jsx'
 
 const App = () => {
   return (
-    <div className='text-red-500'>
-      hello
+    <div className=''>
+      <OurServices/>
+      <Appointments/>
     </div>
   )
 }
