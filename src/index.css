@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Apply the fonts */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* In your Tailwind configuration */
+.app-container {
+  @apply flex flex-col min-h-screen;
+}
+
+.content {
+  @apply flex-grow;
+}
+
