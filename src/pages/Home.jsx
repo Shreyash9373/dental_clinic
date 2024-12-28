@@ -9,7 +9,7 @@ import DisplayDoctor from '../components/DisplayDoctor'
 
 
 const Home = () => (
-  <div className='px-4 py-4'>
+  <div className='px-4 py-4 w-full overflow-hidden'>
     <Header />
     <Ourservices/>
     <Appointments/>
