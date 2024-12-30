@@ -19,7 +19,7 @@ const AboutUs = () => {
           <h2 className="text-blue-800 text-3xl font-bold mb-4">
             Who We Are?
           </h2>
-          <p className="text-gray-700 mb-4 text-xl">
+          <p className="text-gray-700 mb-4 text-lg">
             Welcome to{" "}
             <span className="font-bold">
               Dr. Pakhare Dental Clinic
@@ -46,10 +46,10 @@ const AboutUs = () => {
           <h2 className="text-blue-800 text-3xl font-bold mb-4">
           Why Dentist Care ?
           </h2>
-          <p className="text-gray-700 mb-4 text-xl">
+          <p className="text-gray-700 mb-4 text-lg">
           Dr. Pakhare Dental Clinic is one of the leading dental healthcare clinics in the Pune today. Started with a vision to perform and deliver the best dental treatments available in Noida, while creating a luxury dental experience, like non-other, Dr. Pakhare Dental Clinic has now become the reason behind several hundred smiles, and counting. 
           </p>
-          <p className="text-gray-700 mb-4 text-xl">
+          <p className="text-gray-700 mb-4 text-lg">
           At Dr. Pakhare Dental Clinic – we stand for perfection and thus, stop at nothing to ensure that you receive the best possible treatment options to rectify the issues being faced. From advanced whitening to complete mouth rehabilitation – our hi-tech aided services will surely leave you with a smile and an impeccable experience
           </p>
         </div>
