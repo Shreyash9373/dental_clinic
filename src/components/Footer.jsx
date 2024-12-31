@@ -41,7 +41,8 @@ const Footer = () => {
         {/* Right Section */}
         <div className="w-full h-full lg:w-1/3 mb-6 lg:mb-0 text-center px-5">
           <h4 className="text-3xl font-semibold">Contact</h4>
-          <ul className="mt-4 space-y-2 text-gray-300">
+
+          {/* <ul className="mt-4 space-y-2 text-gray-300">
             <li>
               <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
               Shop No 5, Balaji Towers, Mahatma Phule Chowk, Maharashtra 410501
@@ -54,7 +55,26 @@ const Footer = () => {
               <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
               drpakhare@gmail.com
             </li>
-          </ul>
+          </ul> */}
+          <ul className="mt-4 space-y-2 text-gray-300">
+  <li>
+    <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
+    Shop No 5, Balaji Towers, Mahatma Phule Chowk, Maharashtra 410501
+  </li>
+  <li>
+    <FontAwesomeIcon icon={faPhoneAlt} className="mr-2" />
+    <a href="tel:+919822559274">
+      +91 98225 59274
+    </a>
+  </li>
+  <li>
+    <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+    <a href="mailto:drpakhare@gmail.com">
+      drpakhare@gmail.com
+    </a>
+  </li>
+</ul>
+
 
           <button className="mt-6 bg-[#3E79F3] hover:bg-blue-600 text-white py-2 px-6 rounded-md transition-transform duration-300 transform hover:scale-110">
             Talk to Dentist

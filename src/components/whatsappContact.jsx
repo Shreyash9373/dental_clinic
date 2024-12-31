@@ -46,7 +46,7 @@ const WhatsappContact = () => {
               href="https://wa.me/9373180080" // Replace with the actual phone number
               target="_blank"
               rel="noopener noreferrer"
-              className={`bottom-24 right-8 fixed bg-green-500 text-white size-14 flex items-center justify-center z-10 p-2 rounded-full transition-all duration-500 ${
+              className={`bottom-24 right-4 md:right-8 fixed bg-green-500 text-white size-14 flex items-center justify-center z-10 p-2 rounded-full transition-all duration-500 ${
                 isExiting ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
               }`}
             >
@@ -64,7 +64,7 @@ const WhatsappContact = () => {
             href="tel:+9373180080" // Same phone number, format as per international dialing
             target="_blank"
             rel="noopener noreferrer"
-            className={`bottom-40 right-8 fixed bg-teal-500 text-white size-14 flex items-center justify-center z-10 p-2 rounded-full transition-all duration-500 ${
+            className={`bottom-40 right-4 md:right-8 fixed bg-teal-500 text-white size-14 flex items-center justify-center z-10 p-2 rounded-full transition-all duration-500 ${
               isExiting ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
             }`}
           >

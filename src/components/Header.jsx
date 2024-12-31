@@ -44,7 +44,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="relative h-[80vh] rounded-xl overflow-hidden">
+    <header className="relative w-full h-[40vh] sm:h-[80vh] md:h-[80vh] rounded-xl overflow-hidden ">
       {/* Video Background */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
@@ -62,9 +62,10 @@ const Header = () => {
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white p-5">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 transition-all duration-300 transform hover:scale-105">
-          Your Smile, <span className="text-[#3E79F3]">Our Passion</span>
+          {/* Your Smile, <span className="text-[#3E79F3]">Our Passion</span> */}
+          Your Smile, <span className="text-[#3E79F3]" style={{ textShadow: '2px 2px 4px #000' }}>Our Passion</span>
         </h1>
-        <p className="text-base sm:text-lg md:text-2xl mb-8">
+        <p className="text-base sm:text-lg md:text-2xl mb-3">
           Expert dental care for a brighter, healthier smile.
         </p>
         {/* Button */}
