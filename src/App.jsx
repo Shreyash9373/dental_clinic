@@ -43,7 +43,7 @@ import AboutUs from "./pages/AboutUs";
 import DoctorsTeam from "./pages/DoctorsTeam";
 import DentalServices from "./pages/DentalServices";
 import BookAppointment from "./pages/BookAppointment";
-import WhatsappContact from "./components/WhatsappContact";
+import WhatsappContact from "../src/components/whatsappContact";
 
 function App() {
   return (
