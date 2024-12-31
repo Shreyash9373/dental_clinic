@@ -1,31 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form"; // Import useForm hook
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhoneAlt, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const ContactUs = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  const {
+    register, // For input field registration
+    handleSubmit, // For handling form submission
+    formState: { errors }, // For handling validation errors
+    reset, // To reset the form
+  } = useForm();
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted: ", formData);
+  const onSubmit = (data) => {
+    console.log("Form submitted: ", data);
     alert("Thank you for contacting us! We will get back to you soon.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    reset(); // Reset form after submission
   };
 
   return (
-    // <div className="bg-[#f5faff] py-16">
     <div className="py-16">
       <div className="container mx-auto px-6 lg:px-20">
         {/* Page Title */}
@@ -36,83 +28,88 @@ const ContactUs = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="bg-blue-100 shadow-xl rounded-xl p-8">
-            <h3 className="text-2xl  font-bold mb-6 text-blue-700">
+            <h3 className="text-2xl font-bold mb-6 text-blue-700">
               Get in Touch
             </h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-6">
-                <label
-                  htmlFor="name"
-                  className="block text-lg font-medium text-gray-700 mb-1"
-                >
+                <label htmlFor="name" className="block text-lg font-medium text-gray-700 mb-1">
                   Full Name
                 </label>
                 <input
                   type="text"
-                  name="name"
                   id="name"
-                  value={formData.name}
-                  onChange={handleChange}
+                  {...register("name", {
+                    required: "Name is required",
+                    minLength: {
+                      value: 3,
+                      message: "Name must be at least 3 characters long",
+                    },
+                  })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
                   placeholder="Enter your full name"
-                  required
                 />
+                {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
               </div>
 
               <div className="mb-6">
-                <label
-                  htmlFor="email"
-                  className="block text-lg font-medium text-gray-700 mb-1"
-                >
+                <label htmlFor="email" className="block text-lg font-medium text-gray-700 mb-1">
                   Email Address
                 </label>
                 <input
                   type="email"
-                  name="email"
                   id="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+                      message: "Please enter a valid email address",
+                    },
+                  })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
                   placeholder="Enter your email address"
-                  required
                 />
+                {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
               </div>
 
               <div className="mb-6">
-                <label
-                  htmlFor="phone"
-                  className="block text-lg font-medium text-gray-700 mb-1"
-                >
+                <label htmlFor="phone" className="block text-lg font-medium text-gray-700 mb-1">
                   Phone Number
                 </label>
                 <input
                   type="tel"
-                  name="phone"
                   id="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
+                  {...register("phone", {
+                    required: "Phone number is required",
+                    pattern: {
+                      value: /^[+]?[0-9]{10,15}$/,
+                      message: "Please enter a valid phone number",
+                    },
+                  })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
                   placeholder="Enter your phone number"
                 />
+                {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
               </div>
 
               <div className="mb-6">
-                <label
-                  htmlFor="message"
-                  className="block text-lg font-medium text-gray-700 mb-1"
-                >
+                <label htmlFor="message" className="block text-lg font-medium text-gray-700 mb-1">
                   Your Message
                 </label>
                 <textarea
-                  name="message"
                   id="message"
-                  value={formData.message}
-                  onChange={handleChange}
+                  {...register("message", {
+                    required: "Message is required",
+                    minLength: {
+                      value: 10,
+                      message: "Message must be at least 10 characters long",
+                    },
+                  })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
                   placeholder="Enter your message"
                   rows="5"
-                  required
                 ></textarea>
+                {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
               </div>
 
               <button
@@ -136,7 +133,7 @@ const ContactUs = () => {
                 <div className="flex items-center space-x-4 font-semibold">
                   <FontAwesomeIcon icon={faLocationDot} className="text-blue-600 h-6 w-6" />
                   <span className="text-gray-700 text-sm sm:text-base">
-                  Shop No 5, Balaji Towers, Mahatma Phule Chowk, Maharashtra 410501
+                    Shop No 5, Balaji Towers, Mahatma Phule Chowk, Maharashtra 410501
                   </span>
                 </div>
 
@@ -172,7 +169,6 @@ const ContactUs = () => {
               ></iframe>
             </div>
           </div>
-
         </div>
       </div>
     </div>

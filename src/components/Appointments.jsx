@@ -8,7 +8,7 @@ const Appointments = () => {
   return (
     <div data-aos="fade-right">
     <div className="flex justify-center items-center h-auto py-8 bg-gray-100">
-  <div className="w-11/12 md:w-3/4 lg:w-2/3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-xl shadow-lg p-6">
+  <div className="w-11/12 md:w-3/4 lg:w-2/3 bg-gradient-to-r from-blue-400 to-blue-700 rounded-xl shadow-lg p-6">
     <h2 className="text-1xl md:text-3xl font-bold text-white mb-6 flex items-center">
       Book Your Appointment <span className="ml-2">📅</span>
     </h2>
@@ -98,7 +98,7 @@ const Appointments = () => {
         <div className="flex justify-center md:justify-end items-center mt-6">
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-md font-medium"
+            className="bg-blue-400 hover:bg-blue-700 text-white py-2 px-6 rounded-md font-medium"
           >
             Book an appointment
           </button>
