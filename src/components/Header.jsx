@@ -71,7 +71,7 @@ const Header = () => {
         {/* Button */}
         <div className="mt-5 transition-transform duration-300 transform hover:scale-110">
           <Link
-            to="/bookappointment"
+            to="/appointment"
             className="bg-white text-blue-600 text-sm sm:text-lg md:text-xl font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-lg hover:bg-blue-600 hover:text-white"
           >
             Book an Appointment

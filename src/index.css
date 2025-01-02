@@ -16,3 +16,8 @@ body {
   @apply flex-grow;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
+

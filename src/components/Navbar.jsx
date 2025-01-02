@@ -1,24 +1,58 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/Dr.Pakhare.png";
+// import logo from "../assets/logo1.jpg";
+import logo from '../assets/Dr.Pakhare.png';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation(); // Get the current route
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  // const toggleMobileMenu = () => {
+  //   setIsMobileMenuOpen(!isMobileMenuOpen);
+  // };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    if (!isMobileMenuOpen) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
   };
 
-  // Helper function to check if a link is active
+
   const isActive = (path) => location.pathname === path;
 
+  // Detect if the user has scrolled down
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50); // Set `isScrolled` if scrolled down more than 50px
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="bg-[#3E79F3] px-6 lg:px-20 py-0 text-white">
+    <nav
+      className={`sticky top-0 left-0 w-full px-6 lg:px-20 py-3 z-[1000] transition-all duration-500 ${isScrolled
+        ? "bg-[#3E79F3] shadow-lg backdrop-blur-lg bg-opacity-100 rounded-bl-[1rem] rounded-br-[1rem]"
+        : "bg-[#3E79F3] bg-opacity-100"
+        }`}
+    >
+
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold flex items-center">
-          <img src={logo} alt="Cosmos Dental Logo" className="w-32 h-24 mr-2" />
+          <img
+            src={logo}
+            alt="Cosmos Dental Logo"
+            className="w-32 h-24 mr-2 rounded"
+          />
         </Link>
 
         {/* Hamburger Icon for Mobile */}
@@ -49,9 +83,8 @@ const Navbar = () => {
           <li>
             <Link
               to="/"
-              className={`hover:text-gray-700 font-bold ${
-                isActive("/") ? "text-black font-bold" : ""
-              }`}
+              className={`hover:text-gray-200 font-bold ${isActive("/") ? "text-black font-bold" : ""
+                }`}
             >
               Home
             </Link>
@@ -59,9 +92,8 @@ const Navbar = () => {
           <li>
             <Link
               to="/aboutus"
-              className={`hover:text-gray-700 font-bold ${
-                isActive("/aboutus") ? "text-black font-bold" : ""
-              }`}
+              className={`hover:text-gray-200 font-bold ${isActive("/aboutus") ? "text-black font-bold" : ""
+                }`}
             >
               About Us
             </Link>
@@ -69,9 +101,8 @@ const Navbar = () => {
           <li>
             <Link
               to="/doctorsteam"
-              className={`hover:text-gray-700 font-bold ${
-                isActive("/doctorsteam") ? "text-black font-bold" : ""
-              }`}
+              className={`hover:text-gray-200 font-bold ${isActive("/doctorsteam") ? "text-black font-bold" : ""
+                }`}
             >
               Doctor's Team
             </Link>
@@ -79,9 +110,8 @@ const Navbar = () => {
           <li>
             <Link
               to="/dentalservices"
-              className={`hover:text-gray-700 font-bold ${
-                isActive("/dentalservices") ? "text-black font-bold" : ""
-              }`}
+              className={`hover:text-gray-200 font-bold ${isActive("/dentalservices") ? "text-black font-bold" : ""
+                }`}
             >
               Dental Services
             </Link>
@@ -89,31 +119,20 @@ const Navbar = () => {
           <li>
             <Link
               to="/contact"
-              className={`hover:text-gray-700 font-bold ${
-                isActive("/contact") ? "text-black font-bold" : ""
-              }`}
+              className={`hover:text-gray-200 font-bold ${isActive("/contact") ? "text-black font-bold" : ""
+                }`}
             >
               Contact us
             </Link>
           </li>
         </ul>
 
-        {/* Talk To Dentist Button */}
-        {/* <div className="hidden lg:block transition-transform duration-300 transform hover:scale-110">
-          <Link
-            to="/contact"
-            className="bg-white text-blue-600 font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-gray-200"
-          >
-            Talk To Dentist
-          </Link>
-        </div> */}
-
         {/* Mobile Menu */}
         <div
-          className={`fixed top-0 left-0 h-full w-3/5 bg-white text-black transform ${
-            isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-300 z-50 shadow-lg`}
+          className={`fixed top-0 left-0 h-full w-3/5 bg-white text-black z-[9999] transform ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+            } transition-transform duration-300 shadow-lg`}
         >
+
           <div className="flex justify-between items-center px-6 py-4 border-b bg-[#3E79F3]">
             <h2 className="text-xl font-bold text-white">Menu</h2>
             <button
@@ -142,9 +161,10 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className={`hover:text-indigo-500 block ${
-                  isActive("/") ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg" : ""
-                }`}
+                className={`hover:text-indigo-500 block ${isActive("/")
+                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
+                  : ""
+                  }`}
                 onClick={toggleMobileMenu}
               >
                 Home
@@ -153,9 +173,10 @@ const Navbar = () => {
             <li>
               <Link
                 to="/aboutus"
-                className={`hover:text-indigo-500 block ${
-                  isActive("/aboutus") ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg" : ""
-                }`}
+                className={`hover:text-indigo-500 block ${isActive("/aboutus")
+                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
+                  : ""
+                  }`}
                 onClick={toggleMobileMenu}
               >
                 About Us
@@ -164,9 +185,10 @@ const Navbar = () => {
             <li>
               <Link
                 to="/doctorsteam"
-                className={`hover:text-indigo-500 block ${
-                  isActive("/doctorsteam") ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg" : ""
-                }`}
+                className={`hover:text-indigo-500 block ${isActive("/doctorsteam")
+                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
+                  : ""
+                  }`}
                 onClick={toggleMobileMenu}
               >
                 Doctor's Team
@@ -175,9 +197,10 @@ const Navbar = () => {
             <li>
               <Link
                 to="/dentalservices"
-                className={`hover:text-indigo-500 block ${
-                  isActive("/dentalservices") ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg" : ""
-                }`}
+                className={`hover:text-indigo-500 block ${isActive("/dentalservices")
+                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
+                  : ""
+                  }`}
                 onClick={toggleMobileMenu}
               >
                 Dental Services
@@ -186,9 +209,10 @@ const Navbar = () => {
             <li>
               <Link
                 to="/contact"
-                className={`hover:text-indigo-500 block ${
-                  isActive("/contact") ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg" : ""
-                }`}
+                className={`hover:text-indigo-500 block ${isActive("/contact")
+                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
+                  : ""
+                  }`}
                 onClick={toggleMobileMenu}
               >
                 Contact us
