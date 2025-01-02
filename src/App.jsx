@@ -44,6 +44,8 @@ import DoctorsTeam from "./pages/DoctorsTeam";
 import DentalServices from "./pages/DentalServices";
 import WhatsappContact from "./components/WhatsappContact";
 import Appointments from "./components/Appointments";
+import Events from "./pages/Events";
+import Blogs from "./pages/Blogs";
 
 function App() {
   return (
@@ -59,6 +61,8 @@ function App() {
             <Route path="/doctorsteam" element={<DoctorsTeam />} />
             <Route path="/dentalservices" element={<DentalServices />} />
             <Route path="/appointment" element={<Appointments />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/blogs" element={<Blogs />} />
           </Routes>
         </div>
         <Footer />

@@ -196,6 +196,7 @@ const CavityProtectionSection = () => {
     </section>
   );
 };
+
 const CosmeticDentistrySection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);

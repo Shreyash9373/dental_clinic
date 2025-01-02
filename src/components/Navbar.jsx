@@ -125,6 +125,24 @@ const Navbar = () => {
               Contact us
             </Link>
           </li>
+          <li>
+            <Link
+              to="/events"
+              className={`hover:text-gray-200 font-bold ${isActive("/contact") ? "text-black font-bold" : ""
+                }`}
+            >
+              Events
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/blogs"
+              className={`hover:text-gray-200 font-bold ${isActive("/contact") ? "text-black font-bold" : ""
+                }`}
+            >
+              Blogs
+            </Link>
+          </li>
         </ul>
 
         {/* Mobile Menu */}
@@ -216,6 +234,30 @@ const Navbar = () => {
                 onClick={toggleMobileMenu}
               >
                 Contact us
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/events"
+                className={`hover:text-indigo-500 block ${isActive("/events")
+                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
+                  : ""
+                  }`}
+                onClick={toggleMobileMenu}
+              >
+                Events
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/blogs"
+                className={`hover:text-indigo-500 block ${isActive("/blogs")
+                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
+                  : ""
+                  }`}
+                onClick={toggleMobileMenu}
+              >
+                Blogs
               </Link>
             </li>
           </ul>
