@@ -6,9 +6,6 @@ import Service3 from "../assets/service3.jpg"; // Replace with the second image
 import Service4 from "../assets/service4.jpg"; // Replace with the second image
 import Service5 from "../assets/service5.jpg"; // Replace with the second image
 
-
-
-
 const ImplantDentistrySection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -101,13 +98,6 @@ const ImplantDentistrySection = () => {
     </section>
   );
 };
-
-
-
-
-
-
-
 
 const CavityProtectionSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -475,6 +465,7 @@ const OrthodonticTreatmentSection = () => {
     </section>
   );
 };
+
 const ServiceSection = () => {
   return (
     <div style={{marginLeft:60, marginRight:60}}>
