@@ -25,6 +25,10 @@ const Blogs = () => {
       className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8"
       onMouseMove={handleMouseMove}
     >
+      <h1 className=" sm:text-3xl font-bold text-blue-900 mb-10 text-center">
+        Explore Our Blogs
+      </h1>
+
       <div className="container mx-auto flex flex-col lg:flex-row-reverse items-center gap-8">
         {/* Image Section */}
         <motion.div
@@ -70,15 +74,14 @@ const Blogs = () => {
         </motion.div>
 
         {/* Content Section */}
+
         <motion.div
           initial={{ opacity: 0, x: "100%" }} // Content section from right
           animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: "100%" }}
           transition={{ duration: 0.8 }}
           className="w-full lg:w-1/2 text-left order-2 lg:order-1"
         >
-          <h1 className=" sm:text-3xl font-bold text-blue-900 mb-4">
-            Explore Our Blogs
-          </h1>
+
           <p className="text-gray-700 mb-4 text-xl leading-relaxed">
             Stay updated with the latest trends, insights, and tips on dental care. Our
             blogs are written by experts to provide you with accurate and valuable
@@ -89,12 +92,13 @@ const Blogs = () => {
             enhance your knowledge and maintain a healthier smile.
           </p>
           <button className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-3xl shadow-md hover:bg-blue-700 flex items-center gap-2">
-            <span>📖</span> Read More
+            {/* <span>📖</span> Read More */}
+            Read More
           </button>
         </motion.div>
       </div>
 
-      <Carousel/>
+      <Carousel />
     </section>
   );
 };
