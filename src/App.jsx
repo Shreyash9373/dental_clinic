@@ -42,7 +42,7 @@ import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import DoctorsTeam from "./pages/DoctorsTeam";
 import DentalServices from "./pages/DentalServices";
-import WhatsappContact from "./components/WhatsappContact";
+import WhatsappContact from "./components/whatsappContact";
 import Appointments from "./components/Appointments";
 import Events from "./pages/Events";
 import Blogs from "./pages/Blogs";
