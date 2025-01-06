@@ -24,18 +24,18 @@ const Navbar = () => {
 
   const isActive = (path) => location.pathname === path;
 
-  // Detect if the user has scrolled down
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50); // Set `isScrolled` if scrolled down more than 50px
-    };
+  // // Detect if the user has scrolled down
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollTop = window.scrollY;
+  //     setIsScrolled(scrollTop > 50); // Set `isScrolled` if scrolled down more than 50px
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <nav
@@ -147,7 +147,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-0 left-0 h-full w-3/5 bg-white text-black z-[9999] transform ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          className={`fixed top-0 left-0 h-full bg-white text-black z-[9999] transform ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
             } transition-transform duration-300 shadow-lg`}
         >
 
