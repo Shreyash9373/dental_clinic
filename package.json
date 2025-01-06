@@ -1,13 +1,13 @@
 {
-  "homepage":"https://github.com/Shreyash9373/dental_clinic.git",
+  "homepage": "https://github.com/Shreyash9373/dental_clinic.git",
   "name": "dental_clinic",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -18,6 +18,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "aos": "^2.3.4",
+    "axios": "^1.7.9",
     "fontawesome": "^5.6.3",
     "framer-motion": "^11.15.0",
     "react": "^18.3.1",
@@ -45,5 +46,8 @@
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.6.1"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
