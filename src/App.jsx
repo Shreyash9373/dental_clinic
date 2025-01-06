@@ -42,8 +42,10 @@ import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import DoctorsTeam from "./pages/DoctorsTeam";
 import DentalServices from "./pages/DentalServices";
-import BookAppointment from "./pages/BookAppointment";
-import WhatsappContact from "../src/components/whatsappContact";
+import WhatsappContact from "./components/WhatsappContact";
+import Appointments from "./components/Appointments";
+import Events from "./pages/Events";
+import Blogs from "./pages/Blogs";
 
 function App() {
   return (
@@ -51,14 +53,16 @@ function App() {
       <Router>
         <Navbar />
         <WhatsappContact /> 
-        <div className="content">
+        <div className="content px-3">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/doctorsteam" element={<DoctorsTeam />} />
             <Route path="/dentalservices" element={<DentalServices />} />
-            <Route path="/bookappointment" element={<BookAppointment />} />
+            <Route path="/appointment" element={<Appointments />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/blogs" element={<Blogs />} />
           </Routes>
         </div>
         <Footer />

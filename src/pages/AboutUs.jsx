@@ -14,7 +14,8 @@ const AboutUs = () => {
   const isSection3InView = useInView(section3Ref, { once: true });
 
   return (
-    <div className="bg-white py-10 px-5 md:px-20 lg:px-32">
+    <div className="bg-white py-10 px-5 md:px-20 lg:px-32 ">
+    
       {/* Section 1 */}
       <div
         ref={section1Ref} // Attach ref to this section
