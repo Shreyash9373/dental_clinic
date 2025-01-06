@@ -57,7 +57,7 @@ const DisplayDoctor = () => {
             className="object-cover overflow-hidden w-[320px] md:w-[300px] rounded-md rounded-br-[90px] hover:scale-105 xl:grayscale hover:grayscale-0 transition-transform duration-300 group-hover:-translate-y-4"
           />
           <h1 className="font-semibold text-blue-600 p-3 text-xl text-left">
-            Dr. Aleena Jane
+            Dr. Sangapal Pakhre
           </h1>
         </div>
 
