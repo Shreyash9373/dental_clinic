@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form"; // Import useForm hook
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhoneAlt, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import axios from 'axios';
 
 const ContactUs = () => {
   const {
@@ -11,10 +12,17 @@ const ContactUs = () => {
     reset, // To reset the form
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Form submitted: ", data);
-    alert("Thank you for contacting us! We will get back to you soon.");
+  const onSubmit = async(data) => {
+    try {
+      console.log("Form submitted: ", data);
+    const response = await axios.post('http://localhost:4000/api/patient/save-enquiry', data);
+    console.log(response.data);
+    //alert("Thank you for contacting us! We will get back to you soon.");
     reset(); // Reset form after submission
+    } catch (error) {
+      console.log(error);
+    }
+    
   };
 
   return (
