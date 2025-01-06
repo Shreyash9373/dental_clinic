@@ -196,6 +196,7 @@ const CavityProtectionSection = () => {
     </section>
   );
 };
+
 const CosmeticDentistrySection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
@@ -468,7 +469,7 @@ const OrthodonticTreatmentSection = () => {
 
 const ServiceSection = () => {
   return (
-    <div style={{marginLeft:60, marginRight:60}}>
+    <div>
       <CavityProtectionSection />
       <ImplantDentistrySection />
       <CosmeticDentistrySection />
