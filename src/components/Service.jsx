@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion"; // For animations
 import Service1 from "../assets/service1.jpg"; // Adjust the path as needed for your project
 import Service2 from "../assets/service2.jpg"; // Replace with the second image
@@ -30,24 +30,11 @@ const ImplantDentistrySection = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4">
             Implant Dentistry
           </h2>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-            Dental implants are easily the most popular and also the ideal solution for
-            replacing your missing tooth/teeth. They have definitely changed the course
-            of dentistry in the last quarter of a century or so.
-          </p>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-            A dental implant is basically a titanium post which is surgically inserted
-            into the jawbone beneath the gum line to work as a tooth root. Post insertion,
-            an implantologist will attach a crown on top of the implant to ensure the
-            appearance of a natural tooth.
-          </p>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
+          <p className="text-gray-700 mb-4 text-xl leading-relaxed">
+            Dental implants are a popular and effective solution for replacing missing teeth. A titanium post is surgically inserted into the jawbone to act as a tooth root, and a crown is placed on top to resemble a natural tooth. Implants look, feel, and function like natural teeth.
             Tooth Implants not only look and feel like your natural teeth but also
             function like natural teeth.
           </p>
-          <button className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-2">
-            <span>📞</span> Contact us
-          </button>
         </motion.div>
 
         {/* Image Section */}
@@ -175,22 +162,9 @@ const CavityProtectionSection = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4">
             Cavity Protection
           </h2>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-            Dental cavities can be prevented with a combination of good oral hygiene and
-            regular visits to the dentist. When too many oral bacteria take up residence
-            in your mouth, the acids they secrete can eat through the enamel, leading to
-            holes known as cavities or dental caries.
+          <p className="text-gray-700 mb-4 text-xl leading-relaxed">
+            Dental cavities can be prevented with good oral hygiene, regular dental visits, and treatments like sealants and fluoride. Cavities occur when bacteria produce acids that damage enamel. Early treatment is essential to avoid pain and infections. Prevention is better than treatment and involves proper dental care and professional cleanings.
           </p>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-            The sooner you have a cavity filled, the better since untreated cavities can
-            grow larger and eventually cause serious toothaches and infections. What’s
-            even better than treating cavities is preventing them, which requires a
-            combination of good at-home dental care, regular professional cleanings, and
-            sometimes supplemental treatments like sealants and fluoride treatments.
-          </p>
-          <button className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-2">
-            <span>📞</span> Contact us
-          </button>
         </motion.div>
       </div>
     </section>
@@ -273,22 +247,9 @@ const CosmeticDentistrySection = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4">
             Cosmetic Dentistry
           </h2>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-            Tooth-colored fillings, or ‘white’ fillings, are known as ‘composite’
-            fillings and are made from a putty-like resin-based material. These are
-            lifelike and long-lasting. Currently, the most popular cosmetic dentistry
-            procedure, these types of fillings are a great alternative to black or
-            silver amalgam fillings.
+          <p className="text-gray-700 mb-4 text-xl leading-relaxed">
+            Tooth-colored (composite) fillings are made from a durable resin material that mimics natural teeth. They are molded to the tooth's shape and set with blue light, offering a long-lasting and aesthetic alternative to silver amalgam fillings.
           </p>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-            Made from a putty-like resin-based material, the filling can be molded to
-            the exact shape of the tooth and set using a visible blue light. White
-            fillings are made from a very durable composite material that is bonded to
-            your teeth.
-          </p>
-          <button className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-2">
-            <span>📞</span> Contact us
-          </button>
         </motion.div>
       </div>
     </section>
@@ -319,19 +280,9 @@ const TeethWhiteningSection = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4">
             Teeth Whitening
           </h2>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-            Teeth Whitening is a safe and effective way to quickly improve your smile, giving you a brighter, more
-            radiant smile in as little as a few days. Whitening is the ideal way to refresh teeth
-            that have been stained by smoking, coffee drinking, or certain foods over time.
+          <p className="text-gray-700 mb-4 text-xl leading-relaxed">
+            Teeth whitening is a safe, effective way to brighten your smile, especially for stains caused by smoking, coffee, or certain foods. While some tooth discoloration can be prevented, other causes are beyond control.
           </p>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-            The enamel, which reflects the natural color of your tooth, can stain, or dentin, which is the inner
-            surface of teeth, stains and yellows the teeth. The causes of tooth discoloration are 
-            varied. Though many causes can be prevented, there are some which are not in control.
-          </p>
-          <button className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-2">
-            <span>📞</span> Contact us
-          </button>
         </motion.div>
 
         {/* Image Section */}
@@ -407,17 +358,9 @@ const OrthodonticTreatmentSection = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4">
             Orthodontic Treatment
           </h2>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-            An orthodontist is a dentist trained to diagnose, prevent, and treat teeth and jaw irregularities.
-            They correct existing conditions and are trained to identify problems that may develop in the future.
+          <p className="text-gray-700 mb-4 text-xl leading-relaxed">
+            An orthodontist diagnoses, prevents, and treats teeth and jaw irregularities for all ages. They address issues like bad bites and gaps between teeth. Consult an orthodontist for specialized care.
           </p>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-            Orthodontists work with people of all ages, from children to adults. However, not everyone is born with straight teeth.
-            If you have a bad bite or large spaces between your teeth, you may want to consult a dentist specializing in Cosmos Dental Clinic & Orthodontic Centre.
-          </p>
-          <button className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-2">
-            <span>📞</span> Contact us
-          </button>
         </motion.div>
 
         {/* Image Section */}

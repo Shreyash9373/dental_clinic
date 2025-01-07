@@ -15,7 +15,7 @@ const AboutUs = () => {
 
   return (
     <div className="bg-white py-10 px-5 md:px-20 lg:px-32 ">
-    
+
       {/* Section 1 */}
       <div
         ref={section1Ref} // Attach ref to this section
@@ -40,17 +40,8 @@ const AboutUs = () => {
           <h2 className="text-blue-800 text-3xl font-bold mb-4">
             Who We Are?
           </h2>
-          <p className="text-gray-700 mb-4 text-lg">
-            Welcome to{" "}
-            <span className="font-bold">Dr. Pakhare Dental Clinic</span>. Our
-            team feels honored to provide quality, compassionate dental care for
-            our patients. We strive to build lasting relationships with our
-            Dr. Pakhare Dental Clinic patients by offering honest guidance and
-            modern dental care. This means Dr. Pakhare takes the time to listen
-            to your needs and only suggests necessary treatments for you and
-            your family. We offer different sedation types depending on your
-            anxiety level. If you’re looking for a friendly dentist in Pune
-            region, call us today to schedule an appointment!
+          <p className="text-gray-700 mb-4 text-xl">
+            Welcome to <span className="font-bold">Dr. Pakhare Dental Clinic</span>, where we provide quality, compassionate dental care. We build lasting relationships by offering honest guidance and modern treatments tailored to your needs. We also provide sedation options for anxiety. Call us to schedule an appointment in Pune!
           </p>
         </motion.div>
       </div>
@@ -70,21 +61,8 @@ const AboutUs = () => {
           <h2 className="text-blue-800 text-3xl font-bold mb-4">
             Why Dentist Care?
           </h2>
-          <p className="text-gray-700 mb-4 text-lg">
-            Dr. Pakhare Dental Clinic is one of the leading dental healthcare
-            clinics in the Pune today. Started with a vision to perform and
-            deliver the best dental treatments available in Noida, while
-            creating a luxury dental experience, like non-other, Dr. Pakhare
-            Dental Clinic has now become the reason behind several hundred
-            smiles, and counting.
-          </p>
-          <p className="text-gray-700 mb-4 text-lg">
-            At Dr. Pakhare Dental Clinic – we stand for perfection and thus,
-            stop at nothing to ensure that you receive the best possible
-            treatment options to rectify the issues being faced. From advanced
-            whitening to complete mouth rehabilitation – our hi-tech aided
-            services will surely leave you with a smile and an impeccable
-            experience
+          <p className="text-gray-700 mb-4 text-xl">
+            <span className="font-bold">Dr. Pakhare Dental Clinic</span> in Pune provides top-quality dental care with advanced treatments and a luxury experience. From teeth whitening to full mouth rehabilitation, we ensure the best solutions for a perfect smile.
           </p>
         </motion.div>
 
@@ -122,7 +100,7 @@ const AboutUs = () => {
           <h2 className="text-blue-800 text-3xl font-bold mb-4">
             Excellence in Dental Care
           </h2>
-          <p className="text-gray-700 mb-4 text-lg">
+          <p className="text-gray-700 mb-4 text-xl">
             At <span className="font-bold">Dr. Pakhare Dental Clinic</span>, we
             take pride in delivering personalized dental care with advanced
             technology and techniques. Your health, comfort, and satisfaction
