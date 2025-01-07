@@ -32,6 +32,26 @@ const events = [
       "Learn about the latest advancements in cosmetic dentistry, including teeth whitening, veneers, and smile makeovers.",
     image: banner, // Image for the event
   },
+  {
+    id: 4,
+    name: "Advanced Cosmetic Dentistry Seminar",
+    date: "February 5, 2025",
+    time: "3:00 PM - 6:00 PM",
+    location: "Smile Dental Clinic, Conference Hall",
+    description:
+      "Learn about the latest advancements in cosmetic dentistry, including teeth whitening, veneers, and smile makeovers.",
+    image: banner, // Image for the event
+  },
+  {
+    id: 5,
+    name: "Advanced Cosmetic Dentistry Seminar",
+    date: "February 5, 2025",
+    time: "3:00 PM - 6:00 PM",
+    location: "Smile Dental Clinic, Conference Hall",
+    description:
+      "Learn about the latest advancements in cosmetic dentistry, including teeth whitening, veneers, and smile makeovers.",
+    image: banner, // Image for the event
+  },
 ];
 
 const Events = () => {
