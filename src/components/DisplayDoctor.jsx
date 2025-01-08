@@ -28,24 +28,8 @@ const DisplayDoctor = () => {
 
       {/* Image Section */}
       <div className="w-full h-auto flex flex-col md:flex-row justify-evenly items-center gap-4">
-        {/* Doctor 1 */}
-        <div
-          className="group text-center"
-          data-aos-md="fade-right"
-          data-aos="fade-down"
-          data-aos-delay="0"
-        >
-          <img
-            src={d1}
-            alt="Dr. John Doe"
-            className="object-cover overflow-hidden w-[320px] md:w-[300px] rounded-md rounded-br-[90px] hover:scale-105 xl:grayscale hover:grayscale-0 transition-transform duration-300 group-hover:-translate-y-4"
-          />
-          <h1 className="font-semibold text-blue-600 p-3 text-xl text-left">
-            Dr. John Doe
-          </h1>
-        </div>
 
-        {/* Doctor 2 */}
+        {/* Doctor 1 */}
         <div
           className="group text-center"
           data-aos-md="fade-left"
@@ -61,23 +45,7 @@ const DisplayDoctor = () => {
           </h1>
         </div>
 
-        {/* Doctor 3 */}
-        <div
-          className="group text-center"
-          data-aos-md="fade-right"
-          data-aos="fade-down"
-        >
-          <img
-            src={d3}
-            alt="Dr. Anuj Agarl"
-            className="object-cover overflow-hidden w-[320px] md:w-[300px] rounded-md rounded-br-[90px] hover:scale-105 xl:grayscale hover:grayscale-0 transition-transform duration-300 group-hover:-translate-y-4"
-          />
-          <h1 className="font-semibold text-blue-600 p-3 text-xl text-left">
-            Dr. Anuj Agarl
-          </h1>
-        </div>
-
-        {/* Doctor 4 */}
+        {/* Doctor 2 */}
         <div
           className="group text-center"
           data-aos-md="fade-left"

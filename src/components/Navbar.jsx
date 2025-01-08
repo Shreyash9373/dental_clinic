@@ -1,42 +1,42 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-// import logo from "../assets/logo1.jpg";
-import logo from '../assets/dr.pakharetrans.png';
-// import logo from '../assets/dr.pakharelogo.jpg';
+import logo from "../assets/logo1.jpg";
+// import logo from '../assets/Dr.Pakhare.png';
+// import logo from '../assets/Dr.Pakhare1.png';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // const toggleMobileMenu = () => {
-  //   setIsMobileMenuOpen(!isMobileMenuOpen);
-  // };
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-    if (!isMobileMenuOpen) {
-      document.body.classList.add("menu-open");
-    } else {
-      document.body.classList.remove("menu-open");
-    }
   };
+
+  // const toggleMobileMenu = () => {
+  //   setIsMobileMenuOpen(!isMobileMenuOpen);
+  //   if (!isMobileMenuOpen) {
+  //     document.body.classList.add("menu-open");
+  //   } else {
+  //     document.body.classList.remove("menu-open");
+  //   }
+  // };
 
 
   const isActive = (path) => location.pathname === path;
 
-  // Detect if the user has scrolled down
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50); // Set `isScrolled` if scrolled down more than 50px
-    };
+  // // Detect if the user has scrolled down
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollTop = window.scrollY;
+  //     setIsScrolled(scrollTop > 50); // Set `isScrolled` if scrolled down more than 50px
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <nav
@@ -148,7 +148,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-0 left-0 h-full w-3/5 bg-white text-black z-[9999] transform ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          className={`fixed top-0 left-0 h-screen bg-white text-black z-[9999] transform ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
             } transition-transform duration-300 shadow-lg`}
         >
 

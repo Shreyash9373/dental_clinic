@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion"; // For animations
 import Service1 from "../assets/service1.jpg"; // Adjust the path as needed for your project
 import Service2 from "../assets/service2.jpg"; // Replace with the second image
@@ -30,13 +30,11 @@ const ImplantDentistrySection = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4">
             Implant Dentistry
           </h2>
-          <p className="text-4xl text-gray-700 mb-4 font-semibold sm:text-base leading-relaxed">
-          Dental implants are a popular and effective solution for replacing missing teeth. They involve a titanium post inserted into the jawbone, topped with a crown to mimic a natural tooth's look, feel, and function.
+          <p className="text-gray-700 mb-4 text-xl leading-relaxed">
+            Dental implants are a popular and effective solution for replacing missing teeth. A titanium post is surgically inserted into the jawbone to act as a tooth root, and a crown is placed on top to resemble a natural tooth. Implants look, feel, and function like natural teeth.
+            Tooth Implants not only look and feel like your natural teeth but also
+            function like natural teeth.
           </p>
-          
-          <button className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-2">
-            <span>📞</span> Contact us
-          </button>
         </motion.div>
 
         {/* Image Section */}
@@ -164,12 +162,9 @@ const CavityProtectionSection = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4">
             Cavity Protection
           </h2>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-          Dental cavities are caused by acid-producing bacteria damaging tooth enamel. They can be prevented with good oral hygiene, regular dental visits, and treatments like sealants and fluoride. Early treatment of cavities prevents pain and serious infections.
+          <p className="text-gray-700 mb-4 text-xl leading-relaxed">
+            Dental cavities can be prevented with good oral hygiene, regular dental visits, and treatments like sealants and fluoride. Cavities occur when bacteria produce acids that damage enamel. Early treatment is essential to avoid pain and infections. Prevention is better than treatment and involves proper dental care and professional cleanings.
           </p>
-          <button className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-2">
-            <span>📞</span> Contact us
-          </button>
         </motion.div>
       </div>
     </section>
@@ -252,13 +247,9 @@ const CosmeticDentistrySection = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4">
             Cosmetic Dentistry
           </h2>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-            
-Tooth-colored composite fillings are a durable, lifelike alternative to silver amalgam fillings. Made from resin, they are molded to the tooth's shape and hardened with blue light, offering a popular cosmetic dentistry solution.
+          <p className="text-gray-700 mb-4 text-xl leading-relaxed">
+            Tooth-colored (composite) fillings are made from a durable resin material that mimics natural teeth. They are molded to the tooth's shape and set with blue light, offering a long-lasting and aesthetic alternative to silver amalgam fillings.
           </p>
-          <button className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-2">
-            <span>📞</span> Contact us
-          </button>
         </motion.div>
       </div>
     </section>
@@ -289,12 +280,9 @@ const TeethWhiteningSection = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4">
             Teeth Whitening
           </h2>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-          Teeth whitening is a safe and effective way to brighten your smile, addressing stains from smoking, coffee, or food. It targets discoloration on enamel or dentin, though some causes of staining may be unavoidable.
+          <p className="text-gray-700 mb-4 text-xl leading-relaxed">
+            Teeth whitening is a safe, effective way to brighten your smile, especially for stains caused by smoking, coffee, or certain foods. While some tooth discoloration can be prevented, other causes are beyond control.
           </p>
-          <button className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-2">
-            <span>📞</span> Contact us
-          </button>
         </motion.div>
 
         {/* Image Section */}
@@ -370,12 +358,9 @@ const OrthodonticTreatmentSection = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4">
             Orthodontic Treatment
           </h2>
-          <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
-          Orthodontists specialize in diagnosing, preventing, and treating teeth and jaw irregularities. They work with all ages to correct misalignments, bad bites, and gaps, helping ensure a healthier smile.
+          <p className="text-gray-700 mb-4 text-xl leading-relaxed">
+            An orthodontist diagnoses, prevents, and treats teeth and jaw irregularities for all ages. They address issues like bad bites and gaps between teeth. Consult an orthodontist for specialized care.
           </p>
-          <button className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 flex items-center gap-2">
-            <span>📞</span> Contact us
-          </button>
         </motion.div>
 
         {/* Image Section */}
