@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 // import logo from "../assets/logo1.jpg";
-import logo from '../assets/Dr.Pakhare.png';
+import logo from '../assets/dr.pakharetrans.png';
+// import logo from '../assets/dr.pakharelogo.jpg';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -51,7 +52,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Cosmos Dental Logo"
-            className="w-32 h-24 mr-2 rounded"
+            className="w-32 h-24 mr-2 brightness-150 rounded "
           />
         </Link>
 
