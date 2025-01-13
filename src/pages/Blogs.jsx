@@ -1,104 +1,86 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import BlogImage from "../assets/blogImg.jpg"; // Replace with the actual blog image path
-import Carousel from "../components/Carousel ";
+import axios from "axios";
+import banner from "../assets/banner.jpg";
 
 const Blogs = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isVisible, setIsVisible] = useState(false);
+  const [blogs, setBlogs] = useState([]); // State for blog data
+  const [loading, setLoading] = useState(true); // State for loading
+  const [error, setError] = useState(null); // State for errors
 
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    setMousePosition({ x: clientX, y: clientY });
-  };
-
-  // Delay the animations once the component is mounted
+  // Fetch blogs data
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setIsVisible(true); // Trigger visibility after a delay
-    }, 500); // 500ms delay before the animations start
-    return () => clearTimeout(timeoutId); // Clean up the timeout if the component unmounts
-  }, []);
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/api/patient/get-blog");
+        console.log("Fetched blogs:", response.data);
+        setBlogs(response.data.data); // Save fetched blogs into state
+      } catch (err) {
+        console.error("Error fetching blogs:", err);
+        setError("Failed to fetch blogs.");
+      } finally {
+        setLoading(false); // Stop loading regardless of success or failure
+      }
+    };
+
+    fetchBlogs();
+  }, []); // Run only once on component mount
+
+  // Display loading or error messages
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
-    <section
-      className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8"
-      onMouseMove={handleMouseMove}
-    >
-      <h1 className=" sm:text-3xl font-bold text-blue-900 mb-10 text-center">
+    <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+      <h1 className="sm:text-3xl font-bold text-blue-900 mb-10 text-center">
         Explore Our Blogs
       </h1>
 
-      <div className="container mx-auto flex flex-col lg:flex-row-reverse items-center gap-8">
-        {/* Image Section */}
-        <motion.div
-          initial={{ opacity: 0, x: "-100%" }} // Image section from left
-          animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: "-100%" }}
-          transition={{ duration: 0.8 }}
-          className="relative w-full lg:w-1/2 order-1 lg:order-2 flex justify-center"
-        >
-          <img
-            src={BlogImage} // Replace with the actual blog image path
-            alt="Blogs"
-            className="rounded-tl-[3rem] rounded-br-[3rem] shadow-lg w-4/5 sm:w-3/5 mx-auto relative z-10 h-[200px] sm:h-[300px] lg:h-[300px] object-cover"
-          />
-          {/* Interactive Decorative Elements */}
+      {/* Carousel Section */}
+      <div className="carousel-container overflow-hidden relative w-full py-8">
+        {blogs.length === 0 ? (
+          <div className="text-center text-gray-500">No blogs available at the moment.</div>
+        ) : (
           <motion.div
-            className="absolute bg-blue-500 rounded-full"
-            style={{
-              width: "6rem",
-              height: "6rem",
-              left: "10%",
-              top: "10%",
-            }}
+            className="carousel-track flex w-full gap-4"
+            initial={{ x: 0 }}
             animate={{
-              x: (mousePosition.x - window.innerWidth / 2) * 0.02,
-              y: (mousePosition.y - window.innerHeight / 2) * 0.02,
+              x: ["0%", "-100%"], // Animate the slides to move left
             }}
-            transition={{ type: "spring", stiffness: 100, damping: 10 }}
-          ></motion.div>
-          <motion.div
-            className="absolute bg-yellow-400 rounded-full"
-            style={{
-              width: "4rem",
-              height: "4rem",
-              right: "15%",
-              bottom: "15%",
+            transition={{
+              duration: 25,
+              ease: "linear",
+              repeat: Infinity, // Infinite loop
             }}
-            animate={{
-              x: (mousePosition.x - window.innerWidth / 2) * -0.02,
-              y: (mousePosition.y - window.innerHeight / 2) * -0.02,
-            }}
-            transition={{ type: "spring", stiffness: 100, damping: 10 }}
-          ></motion.div>
-        </motion.div>
-
-        {/* Content Section */}
-
-        <motion.div
-          initial={{ opacity: 0, x: "100%" }} // Content section from right
-          animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: "100%" }}
-          transition={{ duration: 0.8 }}
-          className="w-full lg:w-1/2 text-left order-2 lg:order-1"
-        >
-
-          <p className="text-gray-700 mb-4 text-xl leading-relaxed">
-            Stay updated with the latest trends, insights, and tips on dental care. Our
-            blogs are written by experts to provide you with accurate and valuable
-            information.
-          </p>
-          <p className="text-gray-700 mb-4 text-xl leading-relaxed">
-            From preventive care to advanced treatments, explore various topics to
-            enhance your knowledge and maintain a healthier smile.
-          </p>
-          <button className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-3xl shadow-md hover:bg-blue-700 flex items-center gap-2">
-            {/* <span>📖</span> Read More */}
-            Read More
-          </button>
-        </motion.div>
+          >
+            {[...blogs, ...blogs].map((post, index) => (
+              <div
+                key={index}
+                className="carousel-item bg-white rounded-lg shadow-md flex-shrink-0 w-full sm:w-[calc(100%/1)] lg:w-[calc(100%/3)]"
+              >
+                <img
+                  src={post.image || banner} // Fallback to default banner if no image
+                  alt={post.title ? `Image for ${post.title}` : "Blog Post Image"} // Better alt text for accessibility
+                  className="w-full h-[200px] sm:h-[250px] object-cover rounded-t-lg"
+                />
+                <div className="p-4">
+                  <h2 className="text-lg font-bold text-blue-800">
+                    {post.title || "Untitled Post"}
+                  </h2>
+                  <p className="text-gray-600 mt-2">
+                    {post.description || "No description available."}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        )}
       </div>
-
-      <Carousel />
     </section>
   );
 };
