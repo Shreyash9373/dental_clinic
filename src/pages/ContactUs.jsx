@@ -104,6 +104,10 @@ const ContactUs = () => {
                       value: 10,
                       message: "Message must be at least 10 characters long",
                     },
+                    maxLength: {
+                      value: 500,
+                      message: "Message can contain maximum 500 characters"
+                    }
                   })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
                   placeholder="Enter your message"

@@ -13,39 +13,34 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // const toggleMobileMenu = () => {
-  //   setIsMobileMenuOpen(!isMobileMenuOpen);
-  //   if (!isMobileMenuOpen) {
-  //     document.body.classList.add("menu-open");
-  //   } else {
-  //     document.body.classList.remove("menu-open");
-  //   }
-  // };
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);  // Set to true if scrolled down
+      } else {
+        setIsScrolled(false); // Set to false if at the top
+      }
+    };
 
+    // Listen for the scroll event
+    window.addEventListener("scroll", handleScroll);
 
+    // Clean up the event listener on unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Determine if the current route is active
   const isActive = (path) => location.pathname === path;
-
-  // // Detect if the user has scrolled down
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollTop = window.scrollY;
-  //     setIsScrolled(scrollTop > 50); // Set `isScrolled` if scrolled down more than 50px
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
 
   return (
     <nav
-      className={`sticky top-0 left-0 w-full px-6 lg:px-20 py-3 z-[1000] transition-all duration-500 ${isScrolled
-        ? "bg-[#3E79F3] shadow-lg backdrop-blur-lg bg-opacity-100 rounded-bl-[1rem] rounded-br-[1rem]"
-        : "bg-[#3E79F3] bg-opacity-100"
-        }`}
+      className={`sticky top-0 left-0 w-full px-6 lg:px-20 py-3 z-30 transition-all duration-500 ${
+        isScrolled
+          ? "bg-[#3E79F3] shadow-lg backdrop-blur-lg bg-opacity-100 rounded-bl-[1.5rem] rounded-br-[1.5rem]"
+          : "bg-[#3E79F3] bg-opacity-100"
+      }`}
     >
-
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold flex items-center">
@@ -84,8 +79,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/"
-              className={`hover:text-gray-200 font-bold ${isActive("/") ? "text-black font-bold" : ""
-                }`}
+              className={`hover:text-gray-200 font-bold ${isActive("/") ? "text-black font-bold" : "text-gray-200"}`}
             >
               Home
             </Link>
@@ -93,8 +87,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/aboutus"
-              className={`hover:text-gray-200 font-bold ${isActive("/aboutus") ? "text-black font-bold" : ""
-                }`}
+              className={`hover:text-gray-200 font-bold ${isActive("/aboutus") ? "text-black font-bold" : "text-gray-200"}`}
             >
               About Us
             </Link>
@@ -102,8 +95,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/doctorsteam"
-              className={`hover:text-gray-200 font-bold ${isActive("/doctorsteam") ? "text-black font-bold" : ""
-                }`}
+              className={`hover:text-gray-200 font-bold ${isActive("/doctorsteam") ? "text-black font-bold" : "text-gray-200"}`}
             >
               Doctor's Team
             </Link>
@@ -111,8 +103,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/dentalservices"
-              className={`hover:text-gray-200 font-bold ${isActive("/dentalservices") ? "text-black font-bold" : ""
-                }`}
+              className={`hover:text-gray-200 font-bold ${isActive("/dentalservices") ? "text-black font-bold" : "text-gray-200"}`}
             >
               Dental Services
             </Link>
@@ -120,8 +111,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/contact"
-              className={`hover:text-gray-200 font-bold ${isActive("/contact") ? "text-black font-bold" : ""
-                }`}
+              className={`hover:text-gray-200 font-bold ${isActive("/contact") ? "text-black font-bold" : "text-gray-200"}`}
             >
               Contact us
             </Link>
@@ -129,8 +119,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/events"
-              className={`hover:text-gray-200 font-bold ${isActive("/contact") ? "text-black font-bold" : ""
-                }`}
+              className={`hover:text-gray-200 font-bold ${isActive("/events") ? "text-black font-bold" : "text-gray-200"}`}
             >
               Events
             </Link>
@@ -138,8 +127,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/blogs"
-              className={`hover:text-gray-200 font-bold ${isActive("/contact") ? "text-black font-bold" : ""
-                }`}
+              className={`hover:text-gray-200 font-bold ${isActive("/blogs") ? "text-black font-bold" : "text-gray-200"}`}
             >
               Blogs
             </Link>
@@ -148,10 +136,8 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-0 left-0 h-screen bg-white text-black z-[9999] transform ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-            } transition-transform duration-300 shadow-lg`}
+          className={`fixed top-0 left-0 h-screen bg-white text-black z-[9999] transform ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 shadow-lg`}
         >
-
           <div className="flex justify-between items-center px-6 py-4 border-b bg-[#3E79F3]">
             <h2 className="text-xl font-bold text-white">Menu</h2>
             <button
@@ -180,10 +166,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className={`hover:text-indigo-500 block ${isActive("/")
-                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
-                  : ""
-                  }`}
+                className={`hover:text-indigo-500 block ${isActive("/") ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg" : ""}`}
                 onClick={toggleMobileMenu}
               >
                 Home
@@ -192,10 +175,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/aboutus"
-                className={`hover:text-indigo-500 block ${isActive("/aboutus")
-                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
-                  : ""
-                  }`}
+                className={`hover:text-indigo-500 block ${isActive("/aboutus") ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg" : ""}`}
                 onClick={toggleMobileMenu}
               >
                 About Us
@@ -204,10 +184,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/doctorsteam"
-                className={`hover:text-indigo-500 block ${isActive("/doctorsteam")
-                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
-                  : ""
-                  }`}
+                className={`hover:text-indigo-500 block ${isActive("/doctorsteam") ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg" : ""}`}
                 onClick={toggleMobileMenu}
               >
                 Doctor's Team
@@ -216,10 +193,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/dentalservices"
-                className={`hover:text-indigo-500 block ${isActive("/dentalservices")
-                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
-                  : ""
-                  }`}
+                className={`hover:text-indigo-500 block ${isActive("/dentalservices") ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg" : ""}`}
                 onClick={toggleMobileMenu}
               >
                 Dental Services
@@ -228,10 +202,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/contact"
-                className={`hover:text-indigo-500 block ${isActive("/contact")
-                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
-                  : ""
-                  }`}
+                className={`hover:text-indigo-500 block ${isActive("/contact") ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg" : ""}`}
                 onClick={toggleMobileMenu}
               >
                 Contact us
@@ -240,10 +211,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/events"
-                className={`hover:text-indigo-500 block ${isActive("/events")
-                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
-                  : ""
-                  }`}
+                className={`hover:text-indigo-500 block ${isActive("/events") ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg" : ""}`}
                 onClick={toggleMobileMenu}
               >
                 Events
@@ -252,10 +220,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/blogs"
-                className={`hover:text-indigo-500 block ${isActive("/blogs")
-                  ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg"
-                  : ""
-                  }`}
+                className={`hover:text-indigo-500 block ${isActive("/blogs") ? "text-indigo-500 font-bold bg-gray-200 p-2 rounded-lg" : ""}`}
                 onClick={toggleMobileMenu}
               >
                 Blogs
