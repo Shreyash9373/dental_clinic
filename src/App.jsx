@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
@@ -20,7 +21,7 @@ function App() {
       <Router>
         <ScrollToTop />
         <Navbar />
-        <WhatsappContact />
+        <WhatsappContact /> 
         <div className="content px-3">
           <Routes>
             <Route path="/" element={<Home />} />
