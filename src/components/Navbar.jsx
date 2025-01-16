@@ -52,7 +52,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Cosmos Dental Logo"
-            className="w-32 h-24 mr-2 rounded"
+            className="w-32 h-24 mr-2 brightness-150 rounded "
           />
         </Link>
 
