@@ -2,11 +2,17 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import banner from "../assets/banner.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]); // State for blog data
   const [loading, setLoading] = useState(true); // State for loading
   const [error, setError] = useState(null); // State for errors
+  const navigate = useNavigate(); // Initialize navigate
+  
+  const goToBlogDetail = (blog) => {
+    navigate(`/blogs/${blog._id}`, { state: { blog } }); // Pass event data as state
+  };
 
   // Fetch blogs data
   useEffect(() => {
@@ -61,6 +67,7 @@ const Blogs = () => {
             {[...blogs, ...blogs].map((post, index) => (
               <div
                 key={index}
+                onClick={() => goToBlogDetail(post)} // Navigate with state
                 className="carousel-item bg-white rounded-lg shadow-md flex-shrink-0 w-full sm:w-[calc(100%/1)] lg:w-[calc(100%/3)]"
               >
                 <img
