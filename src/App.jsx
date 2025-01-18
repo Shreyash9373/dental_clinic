@@ -15,6 +15,7 @@ import Events from "./pages/Events";
 import Blogs from "./pages/Blogs";
 import EventDetail from "./pages/EventDetail";
 import BlogDetail from "./pages/BlogDetail";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
