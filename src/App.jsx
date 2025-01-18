@@ -13,7 +13,8 @@ import WhatsappContact from "./components/whatsappContact";
 import Appointments from "./components/Appointments";
 import Events from "./pages/Events";
 import Blogs from "./pages/Blogs";
-import ScrollToTop from "./components/ScrollToTop";
+import EventDetail from "./pages/EventDetail";
+import BlogDetail from "./pages/BlogDetail";
 
 function App() {
   return (
@@ -31,7 +32,9 @@ function App() {
             <Route path="/dentalservices" element={<DentalServices />} />
             <Route path="/appointment" element={<Appointments />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/events/:id" element={<EventDetail />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/:id" element={<BlogDetail />} />
           </Routes>
         </div>
         <Footer />
