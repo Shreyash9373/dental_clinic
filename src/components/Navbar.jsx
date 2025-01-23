@@ -132,6 +132,14 @@ const Navbar = () => {
               Blogs
             </Link>
           </li>
+          {/* <li>
+            <Link
+              to="/bookappointment"
+              className={`hover:text-gray-200 font-bold ${isActive("/blogs") ? "text-black font-bold" : "text-gray-200"}`}
+            >
+              All Doctors
+            </Link>
+          </li> */}
         </ul>
 
         {/* Mobile Menu */}

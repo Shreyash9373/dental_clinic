@@ -18,7 +18,7 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/patient/get-blog");
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URI}/api/patient/get-blog`);
         console.log("Fetched blogs:", response.data);
         setBlogs(response.data.data); // Save fetched blogs into state
       } catch (err) {
