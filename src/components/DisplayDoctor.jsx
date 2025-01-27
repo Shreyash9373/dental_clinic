@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';  // Import AOS styles
+import { useNavigate } from 'react-router-dom';
 
 import d1 from '../assets/Doctor_Potraits/d1.jpg';
 import d2 from '../assets/Doctor_Potraits/d2.jpg';
@@ -8,10 +9,42 @@ import d3 from '../assets/Doctor_Potraits/d3.jpg';
 import d4 from '../assets/Doctor_Potraits/d4.jpg';
 import d5 from '../assets/Doctor_Potraits/d5.jpg';
 
+const Doctors = [ 
+  {
+    id: 1,
+    name: "Dr.Pakhre",
+    exp: "30+ Years",
+    degree: d1 ,
+    photo: d4 ,
+    age: 47 , 
+    contact: 1231234455,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nobis beatae quis ea, aut dignissimos ex architecto ullam eum animi praesentium. Culpa, deleniti doloremque aperiam provident officiis consectetur minima perferendis. "
+
+  } ,
+  {
+    id: 2,
+    name: "Dr.Jane",
+    exp: "15+ Years",
+    degree: d1 ,
+    photo: d5 ,
+    age: 31 ,
+    contact: 1234123456 , 
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nobis beatae quis ea, aut dignissimos ex architecto ullam eum animi praesentium. Culpa, deleniti doloremque aperiam provident officiis consectetur minima perferendis. "
+
+  }
+]
+
 const DisplayDoctor = () => {
 
+  const navigate = useNavigate()
+
+  const handleDoctorRoute = (doctorinfo) => {
+    console.log(doctorinfo)
+    navigate(`/doctor-details/${doctorinfo.id}`, { state: { doctorinfo } }); // Pass only specific doctor details
+  };
+
   useEffect(() => {
-    AOS.init({ duration: 2000 }); // Initialize AOS with optional settings
+    AOS.init({ duration: 1000 }); // Initialize AOS with optional settings
   }, []);
 
   return (
@@ -30,23 +63,28 @@ const DisplayDoctor = () => {
       <div className="w-full h-auto flex flex-col md:flex-row justify-evenly items-center gap-4">
 
         {/* Doctor 1 */}
-        <div
+        {Doctors.map((doctorinfo) => (
+          <div
+          key={doctorinfo.id}
+          onClick={() => handleDoctorRoute(doctorinfo)}
           className="group text-center"
           data-aos-md="fade-left"
           data-aos="fade-up"
         >
           <img
-            src={d4}
-            alt="Dr. Aleena Jane"
+            src={doctorinfo.photo}
+            alt={doctorinfo.name}
             className="object-cover overflow-hidden w-[320px] md:w-[300px] rounded-md rounded-br-[90px] hover:scale-105 xl:grayscale hover:grayscale-0 transition-transform duration-300 group-hover:-translate-y-4"
           />
           <h1 className="font-semibold text-blue-600 p-3 text-xl text-left">
-            Dr. Sangapal Pakhre
+            {doctorinfo.name}
           </h1>
         </div>
+        ))}
+        
 
         {/* Doctor 2 */}
-        <div
+        {/* <div
           className="group text-center"
           data-aos-md="fade-left"
           data-aos="fade-up"
@@ -59,7 +97,7 @@ const DisplayDoctor = () => {
           <h1 className="font-semibold text-blue-600 p-3 text-xl text-left">
             Dr. Maria Garcia
           </h1>
-        </div>
+        </div> */}
       </div>
     </div>
   );

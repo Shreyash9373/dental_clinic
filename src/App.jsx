@@ -18,6 +18,7 @@ import BlogDetail from "./pages/BlogDetail";
 import ScrollToTop from "./components/ScrollToTop";
 import BookAppointment from "./components/BookAppointment";
 import DoctorDetail from "./pages/DoctorDetail";
+import DoctorInfo from "./pages/DoctorInfo";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="/blogs/:id" element={<BlogDetail />} />
             <Route path="/bookappointment" element={<BookAppointment />} />
             <Route path="/bookappointment/:id" element={<DoctorDetail />} />
+            <Route path="/doctor-details/:id" element={<DoctorInfo />} />
           </Routes>
         </div>
         <Footer />
