@@ -20,3 +20,12 @@ body {
 body.menu-open {
   overflow: hidden;
 }
+
+.carousel-container {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none; /* WebKit browsers */
+}

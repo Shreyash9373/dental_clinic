@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import axios from "axios";
 import banner from "../assets/banner.jpg";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +8,7 @@ const Blogs = () => {
   const [loading, setLoading] = useState(true); // State for loading
   const [error, setError] = useState(null); // State for errors
   const navigate = useNavigate(); // Initialize navigate
-  
+
   const goToBlogDetail = (blog) => {
     navigate(`/blogs/${blog._id}`, { state: { blog } }); // Pass event data as state
   };
@@ -42,33 +41,22 @@ const Blogs = () => {
   }
 
   return (
-    <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-      <h1 className="sm:text-3xl font-bold text-blue-900 mb-10 text-center">
+    <section className="bg-blue-50 pt-8 pb-12 px-6 sm:px-12 lg:px-20">
+      <h1 className="text-3xl sm:text-4xl font-bold text-blue-700 text-center mb-12">
         Explore Our Blogs
       </h1>
 
       {/* Carousel Section */}
-      <div className="carousel-container overflow-hidden relative w-full py-8">
+      <div className="carousel-container overflow-x-auto py-2 scrollbar-hidden">
         {blogs.length === 0 ? (
           <div className="text-center text-gray-500">No blogs available at the moment.</div>
         ) : (
-          <motion.div
-            className="carousel-track flex w-full gap-4"
-            initial={{ x: 0 }}
-            animate={{
-              x: ["0%", "-100%"], // Animate the slides to move left
-            }}
-            transition={{
-              duration: 25,
-              ease: "linear",
-              repeat: Infinity, // Infinite loop
-            }}
-          >
+          <div className="carousel-track flex gap-4">
             {[...blogs, ...blogs].map((post, index) => (
               <div
                 key={index}
                 onClick={() => goToBlogDetail(post)} // Navigate with state
-                className="carousel-item bg-white rounded-lg shadow-md flex-shrink-0 w-full sm:w-[calc(100%/1)] lg:w-[calc(100%/3)]"
+                className="carousel-item bg-white cursor-pointer rounded-lg shadow-md flex-shrink-0 w-full sm:w-[calc(100%/1)] lg:w-[calc(100%/3.7)]"
               >
                 <img
                   src={post.image || banner} // Fallback to default banner if no image
@@ -79,13 +67,13 @@ const Blogs = () => {
                   <h2 className="text-lg font-bold text-blue-800">
                     {post.title || "Untitled Post"}
                   </h2>
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-gray-600 mt-2 line-clamp-4">
                     {post.description || "No description available."}
                   </p>
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
         )}
       </div>
     </section>

@@ -32,15 +32,11 @@ const Footer = () => {
               <FontAwesomeIcon icon={faYoutube} />
             </a>
           </div>
-
-          <button className="mt-6 bg-[#3E79F3] hover:bg-blue-600 text-white py-2 px-6 rounded-md transition-transform duration-300 transform hover:scale-110">
-            Contact Us
-          </button>
         </div>
 
         {/* Right Section */}
         <div className="w-full h-full lg:w-1/3 mb-6 lg:mb-0 text-center px-5">
-          <h4 className="text-3xl font-semibold">Contact</h4>
+          <h4 className="text-3xl font-semibold">Reach Out</h4>
           <ul className="mt-4 space-y-2 text-gray-300">
             <li>
               <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
@@ -59,11 +55,6 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-
-
-          <button className="mt-6 bg-[#3E79F3] hover:bg-blue-600 text-white py-2 px-6 rounded-md transition-transform duration-300 transform hover:scale-110">
-            Talk to Dentist
-          </button>
         </div>
       </div>
     </footer>
