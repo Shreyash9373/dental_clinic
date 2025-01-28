@@ -15,7 +15,7 @@ const DoctorDetails = () => {
   }
 
   return (
-    <div className="flex flex-col w-full min-h-screen p-8 bg-gray-50">
+    <div className="flex flex-col w-full min-h-screen py-8 px-4 bg-gray-50">
       {/* Header Section */}
       <div className=" md:h-[420px] h-auto  flex flex-col overflow-hidden md:flex-row items-center justify-center bg-white rounded-xl shadow-lg p-6 md:pt-6 md:px-8 gap-8">
         {/* Doctor's Photo */}
@@ -42,14 +42,14 @@ const DoctorDetails = () => {
       </div>
 
       {/* Details Section */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Degree Section */}
         <div className="bg-white p-6 flex flex-col  rounded-xl shadow-lg">
-          <h2 className="text-2xl text-left font-bold text-blue-700 mb-4">Degree</h2>
+          <h2 className="text-2xl text-left font-bold mb-4 text-blue-700">Degree</h2>
           <img
             src={doctorinfo.degree}
             alt={`${doctorinfo.name}'s Degree`}
-            className="w-[60%] h-[224px] self-center object-cover rounded-lg shadow-md"
+            className="w-[100%] h-auto self-center object-cover rounded-lg shadow-md"
           />
         </div>
 
@@ -62,7 +62,7 @@ const DoctorDetails = () => {
           <p className="text-lg text-gray-600 mt-4">
             <strong>Age:</strong> {doctorinfo.age}
           </p>
-          <p className="text-lg text-gray-600 mt-4">
+          <p className="text-lg  text-gray-600 mt-4">
             <strong>Description:</strong> {doctorinfo.description}
           </p>
         </div>

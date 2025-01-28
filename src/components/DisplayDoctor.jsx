@@ -8,24 +8,25 @@ import d2 from '../assets/Doctor_Potraits/d2.jpg';
 import d3 from '../assets/Doctor_Potraits/d3.jpg';
 import d4 from '../assets/Doctor_Potraits/d4.jpg';
 import d5 from '../assets/Doctor_Potraits/d5.jpg';
+import pakhredegree from '../assets/pakhredegree.jpg'
+
 
 const Doctors = [ 
   {
     id: 1,
     name: "Dr.Pakhre",
     exp: "30+ Years",
-    degree: d1 ,
+    degree: pakhredegree ,
     photo: d4 ,
     age: 47 , 
     contact: 1231234455,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nobis beatae quis ea, aut dignissimos ex architecto ullam eum animi praesentium. Culpa, deleniti doloremque aperiam provident officiis consectetur minima perferendis. "
-
+    description: "Dr. Pakhre, BDS   Based in Pune, Dr. Pakhre is a highly experienced and esteemed dental professional with over 30 years of expertise in the field. Renowned for his dedication to patient care and precision in treatment, Dr. Pakhre has been transforming smiles and enhancing oral health for decades.Specializing in general dentistry, cosmetic procedures, and restorative care, he combines traditional knowledge with the latest dental advancements to deliver top-notch services. His patients frequently commend his friendly demeanor, compassionate approach, and the ability to create a stress-free dental experience for individuals of all ages. Dr. Pakhre's long-standing reputation for excellence, coupled with glowing reviews from his patients, makes him one of Pune's most sought-after dentists. Whether you need a routine check-up, advanced restorative work, or a smile makeover, Dr. Pakhre is committed to providing care that exceeds expectations."
   } ,
   {
     id: 2,
     name: "Dr.Jane",
     exp: "15+ Years",
-    degree: d1 ,
+    degree: pakhredegree ,
     photo: d5 ,
     age: 31 ,
     contact: 1234123456 , 
