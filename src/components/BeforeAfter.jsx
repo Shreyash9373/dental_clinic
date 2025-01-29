@@ -27,7 +27,8 @@ const MBeforeAfter = ({ beforeImage, afterImage }) => {
   }, []);
 
   return (
-    <div className="relative w-80 h-60 rounded-2xl overflow-hidden flex-shrink-0">
+    //rounded-tr-[6rem] rounded-bl-[6rem]
+    <div className="relative w-80 h-60 rounded-2xl overflow-hidden flex-shrink-0 ">
       {/* Before Image */}
       <img
         src={beforeImage}
@@ -53,7 +54,7 @@ const MBeforeAfter = ({ beforeImage, afterImage }) => {
         Before
       </div>
       <div
-        className={`absolute top-4 left-4 bg-blue-700 text-white text-sm px-4 py-2 rounded-full shadow-lg transition-opacity duration-1000 ${
+        className={`absolute top-4 right-4 bg-green-700 text-white text-sm px-4 py-2 rounded-full shadow-lg transition-opacity duration-1000 ${
           isAfterVisible ? "opacity-100" : "opacity-0"
         }`}
       >
