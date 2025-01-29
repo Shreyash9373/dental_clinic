@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion"; // Import motion and useInView hook
 import banner from "../assets/banner.jpg";
+import pakhre from "../assets/pakhre2.jpg"
+import pakhre1 from "../assets/pakhre1.jpg"
+import pakhre2 from "../assets/pakhre3.jpg"
 
 const AboutUs = () => {
   // Refs for individual sections
@@ -14,7 +17,7 @@ const AboutUs = () => {
   const isSection3InView = useInView(section3Ref, { once: true });
 
   return (
-    <div className="bg-white py-10 px-5 md:px-20 lg:px-32 ">
+    <div className="flex flex-col items-center bg-white py-10 px-5 md:px-20 lg:px-32 ">
 
       {/* Section 1 */}
       <div
@@ -22,11 +25,11 @@ const AboutUs = () => {
         className="flex flex-col lg:flex-row items-center lg:items-start gap-10 mb-20"
       >
         {/* Left Section: Static Image */}
-        <div className="flex-shrink-0 rounded-tr-[10rem] rounded-bl-[10rem] overflow-hidden">
+        <div className="flex-shrink-0 w-72 h-[28rem] rounded-tr-[6rem] rounded-bl-[6rem] overflow-hidden">
           <img
-            src={banner}
+            src={pakhre1}
             alt="Dental Clinic"
-            className="w-full max-w-md lg:max-w-lg"
+            className="w-full h-full object-cover"
           />
         </div>
 
@@ -67,14 +70,21 @@ const AboutUs = () => {
         </motion.div>
 
         {/* Right Section: Static Image */}
-        <div className="flex-shrink-0 rounded-tr-[10rem] rounded-bl-[10rem] overflow-hidden">
+        {/* <div className="flex-shrink-0 rounded-tr-[10rem] rounded-bl-[10rem] overflow-hidden ">
           <img
-            src={banner}
+            src={pakhre}
             alt="Dental Clinic"
-            className="w-full max-w-md lg:max-w-lg"
+            className="w-full max-w-md  lg:max-w-lg"
           />
+        </div> */}
+        <div className="flex-shrink-0 w-72 h-[28rem] rounded-tr-[6rem] rounded-bl-[6rem] overflow-hidden">
+            <img
+              src={pakhre}
+              alt="Dental Clinic"
+              className="w-full h-full object-cover"
+            />
         </div>
-      </div>
+      </div>  
 
       {/* Section 3 */}
       <div
@@ -82,11 +92,11 @@ const AboutUs = () => {
         className="flex flex-col lg:flex-row items-center lg:items-start gap-10 mb-20"
       >
         {/* Left Section: Static Image */}
-        <div className="flex-shrink-0 rounded-tr-[10rem] rounded-bl-[10rem] overflow-hidden">
+        <div className="flex-shrink-0 w-72 h-[28rem] rounded-tr-[6rem] rounded-bl-[6rem] overflow-hidden">
           <img
-            src={banner}
+            src={pakhre2}
             alt="Dental Clinic"
-            className="w-full max-w-md lg:max-w-lg"
+            className="w-full h-full object-cover"
           />
         </div>
 
