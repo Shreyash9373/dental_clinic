@@ -106,7 +106,8 @@ const Events = () => {
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 text-white opacity-90 hover:opacity-100 transition-opacity duration-300">
                   <h2 className="text-xl font-semibold mb-2">{event.title || "Untitled Event"}</h2>
                   <p className="text-sm mb-2">
-                    <span className="font-bold">Date:</span> {event.date || "TBD"}
+                  <span className="font-bold">Date:</span> {new Date(event.date).toLocaleDateString() || "TBD"}
+
                   </p>
                   <p className="text-sm mb-2">
                     <span className="font-bold">Time:</span> {event.time || "TBD"}
