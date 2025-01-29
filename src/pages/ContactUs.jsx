@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form"; // Import useForm hook
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhoneAlt, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify"; // Importing toast and ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Import the styles for react-toastify
 
 const ContactUs = () => {
   const {
@@ -15,17 +16,20 @@ const ContactUs = () => {
 
   const onSubmit = async(data) => {
     try {
+      // Simulate form submission to server
       console.log("Form submitted: ", data);
-    const response = await axios.post('http://localhost:4000/api/patient/save-enquiry', data);
-    console.log(response.data);
-    toast.success(response.data.message || "Thankyou for filling form, We will get back to you very soon");
-    //alert("Thank you for contacting us! We will get back to you soon.");
-    reset(); // Reset form after submission
+      const response = await axios.post('http://localhost:4000/api/patient/save-enquiry', data);
+      console.log(response.data);
+      
+      // Success Toast
+      toast.success(response.data.message || "Thank you for filling out the form! We will get back to you very soon.");
+      
+      // Reset the form after submission
+      reset();
     } catch (error) {
       console.log(error);
-      toast.error( "Some error occured, Please fill form again");
+      toast.error("An error occurred, please try again.");
     }
-    
   };
 
   return (
@@ -186,6 +190,9 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+
+      {/* ToastContainer to display the toast notifications */}
+      <ToastContainer />
     </div>
   );
 };
