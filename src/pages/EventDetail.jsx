@@ -129,16 +129,16 @@ const EventDetail = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container bg-gray-200 mx-auto px-4 py-8">
       {/* Event Header */}
-      <div className="relative w-full h-72 sm:h-96 md:h-[450px] rounded-lg mb-8 overflow-hidden">
+      <div className="relative  w-full flex items-center justify-center h-72 sm:h-96 md:h-[450px] rounded-lg mb-8 overflow-hidden">
         <img
           src={event.image || "placeholder.jpg"}
           alt={event.title || "Event"}
-          className="object-cover w-full h-full"
+          className="object-cover w-[70%] rounded-md object-top h-full"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50" />
-        <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-70 py-4 px-6">
+        <div className="absolute bottom-0 left-0 right-0 py-4 px-6">
           <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center drop-shadow-md">
             {event.title}
           </h1>
@@ -175,12 +175,7 @@ const EventDetail = () => {
           </p>
         </div>
 
-        {/* RSVP Button */}
-        <div className="mt-8 flex justify-center">
-          <button className="px-6 py-3 bg-blue-600 text-white font-semibold text-lg rounded-full shadow-lg hover:bg-blue-700 transform hover:scale-105 transition-all">
-            RSVP Now
-          </button>
-        </div>
+        
       </div>
     </div>
   );
