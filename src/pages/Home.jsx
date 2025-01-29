@@ -39,6 +39,7 @@ import { Link } from 'react-router-dom'; // Import Link for navigation
 import banner from '../assets/banner.jpg'; // Import the banner image
 import Events from './Events';
 import Blogs from './Blogs';
+import BeforeAfter from '../components/BeforeAfter';
 
 // Define the events data here
 const events = [
@@ -83,6 +84,8 @@ const Home = () => (
     {/* <Appointments/> */}
 
     <ServiceSection/>
+    
+    <BeforeAfter />
 
     <Patient/>
 

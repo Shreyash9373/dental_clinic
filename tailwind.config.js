@@ -4,6 +4,17 @@ export default {
     extend: {},
   },
   plugins: [
-    require('tailwind-scrollbar-hide')
+    require("tailwind-scrollbar-hide"),
   ],
+  extend: {
+    animation: {
+      slide: "slide 2src infinite",
+    },
+    keyframes: {
+      slide: {
+        "0%, 100%": { opacity: "1" },
+        "50.1%, 100%": { opacity: "0" },
+      },
+    },
+  },
 };

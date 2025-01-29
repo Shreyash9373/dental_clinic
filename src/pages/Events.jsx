@@ -16,7 +16,8 @@ const Events = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/patient/get-event");
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URI}/api/patient/get-event`);
+        console.log("Fetched events:", response.data);
         setEvents(response.data.data); // Save fetched events into state
       } catch (err) {
         console.error("Error fetching events:", err);
