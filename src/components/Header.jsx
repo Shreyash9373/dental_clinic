@@ -54,7 +54,7 @@ const Header = () => {
       window.location.href = "tel:+1234567890"; // Replace +1234567890 with the desired phone number
     } else {
       // If on desktop, navigate to the Contact Us page
-      navigate("/bookappointment");
+      navigate("/contact");
     }
   };
 
