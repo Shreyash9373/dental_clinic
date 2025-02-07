@@ -19,13 +19,14 @@ const DoctorDetails = () => {
       {/* Header Section */}
       <div className=" md:h-[420px] h-auto  flex flex-col overflow-hidden md:flex-row items-center justify-center bg-white rounded-xl shadow-lg p-6 md:pt-6 md:px-8 gap-8">
         {/* Doctor's Photo */}
-        <div className="w-full md:w-1/3 h-full flex items-center justify-center">
-          <img
-            src={doctorinfo.photo}
-            alt={doctorinfo.name}
-            className="w-full h-full self-center object-cover  object-top rounded-xl shadow-md"
-          />
-        </div>
+        <div className="w-full md:w-1/3 h-auto flex items-center justify-center">
+  <img
+    src={doctorinfo.photo}
+    alt={doctorinfo.name}
+    className="w-[280px] md:w-[200px] h-[200px] md:h-[380px] object-cover object-top rounded-xl shadow-md"
+  />
+</div>
+
 
         {/* Doctor's Name and Contact */}
         <div className="w-full md:w-2/3 text-center md:text-left">
