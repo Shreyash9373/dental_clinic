@@ -23,7 +23,7 @@ const DoctorDetails = () => {
   <img
     src={doctorinfo.photo}
     alt={doctorinfo.name}
-    className="w-[280px] md:w-[200px] h-[200px] md:h-[380px] object-cover object-top rounded-xl shadow-md"
+    className="w-[280px] md:w-[320px] h-[350px] md:h-[380px] object-cover object-center rounded-xl shadow-md"
   />
 </div>
 

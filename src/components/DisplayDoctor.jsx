@@ -74,7 +74,7 @@ const DisplayDoctor = () => {
       <img
         src={doctorinfo.photo}
         alt={doctorinfo.name}
-        className="object-cover overflow-hidden w-[300px] md:w-[320px] h-[350px] md:h-[380px] rounded-md rounded-br-[90px] hover:scale-105 xl:grayscale hover:grayscale-0 transition-transform duration-300 group-hover:-translate-y-4"
+        className="object-cover overflow-hidden w-[300px] md:w-[320px] h-[350px] md:h-[380px] rounded-md rounded-br-[90px] hover:scale-105  hover:grayscale-0 transition-transform duration-300 group-hover:-translate-y-4"
       />
       <h1 className="font-semibold text-blue-600 p-3 text-xl text-left">
         {doctorinfo.name}
