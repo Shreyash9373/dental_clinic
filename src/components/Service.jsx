@@ -417,7 +417,7 @@ const ServiceSection = () => {
       <ImplantDentistrySection />
       <CosmeticDentistrySection />
       <TeethWhiteningSection />
-      <OrthodonticTreatmentSection />
+      <OrthodonticTreatmentSection />   
     </div>
   );
 };
