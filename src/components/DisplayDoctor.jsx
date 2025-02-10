@@ -10,12 +10,12 @@ import d3 from '../assets/Doctor_Potraits/d3.jpg';
 import d4 from '../assets/Doctor_Potraits/d4.jpg';
 import d5 from '../assets/Doctor_Potraits/d5.jpg';
 import pakhredegree from '../assets/pakhredegree.jpg'
-
+import mrspakhredegree from '../assets/mrspakhredegree.jpg';
 
 const Doctors = [ 
   {
     id: 1,
-    name: "Dr.Pakhre",
+    name: "Dr.Sangpal Pakhare(B.D.S)",
     exp: "30+ Years",
     degree: pakhredegree ,
     photo: doc1 ,
@@ -25,13 +25,13 @@ const Doctors = [
   } ,
   {
     id: 2,
-    name: "Dr.Madhuri Pakhre ",
-    exp: "15+ Years",
-    degree: pakhredegree ,
+    name: "Dr.Madhuri Pakhare(B.D.S)",
+    exp: "26+ Years",
+    degree: mrspakhredegree ,
     photo: doc2 ,
-    age: 31 ,
-    contact: 1234123456 , 
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nobis beatae quis ea, aut dignissimos ex architecto ullam eum animi praesentium. Culpa, deleniti doloremque aperiam provident officiis consectetur minima perferendis. "
+    age: 49 ,
+    contact: 9822559274 , 
+    description: "Dr. Madhuri Pakhare is a highly skilled and experienced dentist with over 26 years of expertise in providing top-quality dental care. With a passion for enhancing smiles and ensuring optimal oral health, she has successfully treated countless patients with dedication and precision. At 49 years old, Dr. Pakhare continues to stay updated with the latest advancements in dentistry, offering a wide range of treatments, including preventive care, restorative dentistry, cosmetic procedures, and specialized treatments tailored to individual needs."
 
   }
 ]
@@ -74,7 +74,7 @@ const DisplayDoctor = () => {
       <img
         src={doctorinfo.photo}
         alt={doctorinfo.name}
-        className="object-cover overflow-hidden w-[300px] md:w-[320px] h-[350px] md:h-[380px] rounded-md rounded-br-[90px] hover:scale-105 xl:grayscale hover:grayscale-0 transition-transform duration-300 group-hover:-translate-y-4"
+        className="object-cover overflow-hidden w-[300px] md:w-[320px] h-[350px] md:h-[380px] rounded-md rounded-br-[90px] hover:scale-105  hover:grayscale-0 transition-transform duration-300 group-hover:-translate-y-4"
       />
       <h1 className="font-semibold text-blue-600 p-3 text-xl text-left">
         {doctorinfo.name}
