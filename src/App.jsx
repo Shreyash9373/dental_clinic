@@ -19,29 +19,31 @@ import ScrollToTop from "./components/ScrollToTop";
 import BookAppointment from "./components/BookAppointment";
 import DoctorDetail from "./pages/DoctorDetail";
 import DoctorInfo from "./pages/DoctorInfo";
+import AddReview from "./components/review/AddReview";
 
 function App() {
   return (
-    <div className="app-container">
+    <div className='app-container'>
       <Router>
         <ScrollToTop />
         <Navbar />
-        <WhatsappContact /> 
-        <div className="content px-3">
+        <WhatsappContact />
+        <div className='content px-3'>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="/aboutus" element={<AboutUs />} />
-            <Route path="/doctorsteam" element={<DoctorsTeam />} />
-            <Route path="/dentalservices" element={<DentalServices />} />
-            <Route path="/appointment" element={<Appointments />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/events/:id" element={<EventDetail />} />
-            <Route path="/blogs" element={<Blogs />} />
-            <Route path="/blogs/:id" element={<BlogDetail />} />
-            <Route path="/bookappointment" element={<BookAppointment />} />
-            <Route path="/bookappointment/:id" element={<DoctorDetail />} />
-            <Route path="/doctor-details/:id" element={<DoctorInfo />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/contact' element={<ContactUs />} />
+            <Route path='/aboutus' element={<AboutUs />} />
+            <Route path='/doctorsteam' element={<DoctorsTeam />} />
+            <Route path='/dentalservices' element={<DentalServices />} />
+            <Route path='/appointment' element={<Appointments />} />
+            <Route path='/events' element={<Events />} />
+            <Route path='/events/:id' element={<EventDetail />} />
+            <Route path='/blogs' element={<Blogs />} />
+            <Route path='/blogs/:id' element={<BlogDetail />} />
+            <Route path='/bookappointment' element={<BookAppointment />} />
+            <Route path='/bookappointment/:id' element={<DoctorDetail />} />
+            <Route path='/doctor-details/:id' element={<DoctorInfo />} />
+            <Route path='/:visitId/review' element={<AddReview />} />
           </Routes>
         </div>
         <Footer />
