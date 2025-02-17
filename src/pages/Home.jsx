@@ -7,8 +7,6 @@
 // import DisplayDoctor from '../components/DisplayDoctor'
 // import Events from '../pages/Events'
 
-
-
 // const Home = () => (
 //   <div className='px-4 py-4 w-full overflow-hidden'>
 //     <Header />
@@ -23,23 +21,19 @@
 
 // export default Home;
 
-
-
-
-
-
-import React from 'react';
-import Header from '../components/Header';
-import Ourservices from '../components/Ourservices';
-import Appointments from '../components/Appointments';
-import ServiceSection from '../components/Service';
-import Patient from '../components/Patient';
-import DisplayDoctor from '../components/DisplayDoctor';
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import banner from '../assets/banner.jpg'; // Import the banner image
-import Events from './Events';
-import Blogs from './Blogs';
-import BeforeAfter from '../components/BeforeAfter';
+import React from "react";
+import Header from "../components/Header";
+import Ourservices from "../components/Ourservices";
+import Appointments from "../components/Appointments";
+import ServiceSection from "../components/Service";
+import Patient from "../components/Patient";
+import DisplayDoctor from "../components/DisplayDoctor";
+import { Link } from "react-router-dom"; // Import Link for navigation
+import banner from "../assets/banner.jpg"; // Import the banner image
+import Events from "./Events";
+import Blogs from "./Blogs";
+import BeforeAfter from "../components/BeforeAfter";
+import Reviews from "./Reviews";
 
 // Define the events data here
 const events = [
@@ -76,21 +70,23 @@ const events = [
 ];
 
 const Home = () => (
-  <div className='px-4 py-4 w-full overflow-hidden'>
+  <div className="px-4 py-4 w-full overflow-hidden">
     <Header />
 
-    <Ourservices/>
+    <Ourservices />
 
     {/* <Appointments/> */}
 
-    <ServiceSection/>
-    
+    <ServiceSection />
+
     <BeforeAfter />
 
-    <Patient/>
+    <Patient />
 
-    <DisplayDoctor/>
-    
+    <DisplayDoctor />
+
+    <Reviews />
+
     {/* <section className="bg-gray-50 py-16 px-6 sm:px-12 lg:px-20">
       <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 text-center mb-10">
         Upcoming Events
@@ -126,14 +122,14 @@ const Home = () => (
       </div>
 
       {/* Show More button */}
-      {/* <div className="text-center mt-6">
+    {/* <div className="text-center mt-6">
         <Link to="/events">
           <button className="px-6 py-3 bg-blue-600 text-white rounded-3xl hover:bg-blue-700">
             Show More
           </button>
         </Link>
       </div>
-    </section> */} 
+    </section> */}
     <Events />
     <Blogs />
   </div>
