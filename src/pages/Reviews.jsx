@@ -71,12 +71,26 @@ const Reviews = () => {
       <motion.div
         className='flex space-x-8'
         initial={{ x: 0 }}
-        animate={{ x: "-100%" }}
+        animate={{ x: "-75%" }}
         transition={{
           repeat: Infinity,
           duration: 20,
           ease: "linear",
         }}>
+        {[...reviews, ...reviews].map((review, index) => (
+          <div
+            key={index}
+            className='min-w-[300px] p-4 bg-white rounded-2xl shadow-md'>
+            <div className='flex items-center mb-2'>
+              {renderStars(review.rating)}
+              <span className='ml-2 text-gray-600'>{review.rating}</span>
+            </div>
+            <p className='italic overflow-hidden text-ellipsis whitespace-nowrap'>
+              "{review.description}"
+            </p>
+            <p className='mt-4 text-right text-gray-500'>- {review.name}</p>
+          </div>
+        ))}
         {[...reviews, ...reviews].map((review, index) => (
           <div
             key={index}
