@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
-import ServiceSection from '../components/Service'
+import ServiceSection from "../components/Service";
 import { motion } from "framer-motion"; // For animations
 
-import Service5 from '../assets/service5.jpg'
-import Service6 from '../assets/service6.jpg'
-import Service7 from '../assets/service7.jpg'
-import Service8 from '../assets/service8.jpg'
-
-
-
+import Service6 from "../assets/service6.jpg";
+import Service7 from "../assets/service7.jpg";
+import Service8 from "../assets/service8.jpg";
 
 const MicroscopePrecisionSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -35,7 +31,10 @@ const MicroscopePrecisionSection = () => {
             Microscope for High Precision Procedures
           </h2>
           <p className="text-gray-700 mb-4 text-xl leading-relaxed">
-            Our advanced dental microscopes ensure the highest level of precision for complex procedures. With enhanced magnification and lighting, we can perform treatments with greater accuracy, minimizing risks and improving outcomes. This technology is essential for root canals, microsurgeries, and other intricate procedures.
+            Our advanced dental microscopes ensure the highest level of precision for complex
+            procedures. With enhanced magnification and lighting, we can perform treatments with
+            greater accuracy, minimizing risks and improving outcomes. This technology is essential
+            for root canals, microsurgeries, and other intricate procedures.
           </p>
         </motion.div>
 
@@ -88,7 +87,6 @@ const MicroscopePrecisionSection = () => {
   );
 };
 
-
 const RootCanalTreatmentSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -98,10 +96,7 @@ const RootCanalTreatmentSection = () => {
   };
 
   return (
-    <section
-      className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8"
-      onMouseMove={handleMouseMove}
-    >
+    <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8" onMouseMove={handleMouseMove}>
       <div className="container mx-auto flex flex-col lg:flex-row-reverse items-center gap-8">
         {/* Content Section */}
         <motion.div
@@ -114,10 +109,9 @@ const RootCanalTreatmentSection = () => {
             Root Canal Treatment
           </h2>
           <p className="text-gray-700 mb-4 text-xl leading-relaxed">
-            A root canal is a treatment to repair and save a badly damaged or
-            infected tooth. This procedure removes the damaged pulp, cleans the
-            tooth, and seals it, providing relief from pain and preventing
-            further decay.
+            A root canal is a treatment to repair and save a badly damaged or infected tooth. This
+            procedure removes the damaged pulp, cleans the tooth, and seals it, providing relief
+            from pain and preventing further decay.
           </p>
         </motion.div>
 
@@ -195,7 +189,10 @@ const FullMouthRehabilitationSection = () => {
             Full Mouth Rehabilitation
           </h2>
           <p className="text-gray-700 mb-4 text-xl leading-relaxed">
-            Full mouth rehabilitation is a comprehensive treatment designed to restore the function, health, and aesthetics of your smile. Combining various dental procedures, it addresses issues such as worn teeth, missing teeth, and misaligned bites. Our customized approach ensures a complete transformation of your oral health and appearance.
+            Full mouth rehabilitation is a comprehensive treatment designed to restore the function,
+            health, and aesthetics of your smile. Combining various dental procedures, it addresses
+            issues such as worn teeth, missing teeth, and misaligned bites. Our customized approach
+            ensures a complete transformation of your oral health and appearance.
           </p>
         </motion.div>
 
@@ -248,19 +245,16 @@ const FullMouthRehabilitationSection = () => {
   );
 };
 
-
-
-
 const DentalServices = () => {
   return (
     <>
-    <ServiceSection/>
+      <ServiceSection />
 
-    <MicroscopePrecisionSection />
-    <RootCanalTreatmentSection />
-    <FullMouthRehabilitationSection />
+      <MicroscopePrecisionSection />
+      <RootCanalTreatmentSection />
+      <FullMouthRehabilitationSection />
     </>
-  )
-}
+  );
+};
 
-export default DentalServices
+export default DentalServices;
